@@ -1,13 +1,38 @@
+// Write your code here
 
 import './ExpenseItem.css';
+
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"]
 function ExpenseItem(props) {
-  const expenseDate = props.date.toISOString();
+  
   const expenseTitle = props.title
   const expenseAmount = props.price
   const expenseLocation = props.location
+
+  const month = months[props.date.getMonth()]
+
+  
+  const year = props.date.getFullYear()
+  const date = props.date.getDate().toString().padStart(2, '0');
   return (
     <div className="expense-item">
-      <div>{expenseDate}</div>
+     <div>
+        <div>{month}</div>
+        <div>{year}</div>
+        <div>{date}</div>
+     </div>
       <div className="expense-item__location">{expenseLocation}</div>
       <div className="expense-item__description">
         <h2>{expenseTitle}</h2>
