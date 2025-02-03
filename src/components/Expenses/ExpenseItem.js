@@ -1,16 +1,14 @@
 // Write your code at the relevant places in the code below
-
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 
 const ExpenseItem = (props) => {
-  const [title,setTitle] = useState(props.title);
+  const [title, setTitle] = useState(props.title);
   
   function buttonClickHandler() {
-    setTitle('New Title')
-      
+    setTitle("New Title");
   }
 
   return (
@@ -26,3 +24,4 @@ const ExpenseItem = (props) => {
 };
 
 export default ExpenseItem;
+
